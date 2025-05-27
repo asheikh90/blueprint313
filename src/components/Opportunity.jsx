@@ -1,219 +1,191 @@
 import React from 'react';
-import { FaMoneyBillWave, FaHandshake, FaChalkboardTeacher, FaRobot, FaChartLine, FaBitcoin, FaShieldAlt, FaSolarPanel, FaOilCan, FaIndustry } from 'react-icons/fa';
+import { FaArrowRight, FaCreditCard, FaHandshake, FaChalkboardTeacher, FaRobot, FaBullhorn } from 'react-icons/fa';
 
 const Opportunity = () => {
   const opportunities = [
     {
-      id: 1,
-      icon: <FaMoneyBillWave className="text-3xl text-primary-500" />,
+      icon: <FaCreditCard className="text-4xl text-primary-500 mb-4" />,
       title: "Payment Processing",
-      description: "Earn recurring revenue every time anyone swipes their credit card at a business. Our payment processing opportunity allows you to build a steady income stream with minimal ongoing effort.",
-      features: [
+      description: "Earn recurring revenue by helping businesses process credit card payments. Our partners provide the infrastructure, you provide the relationships.",
+      benefits: [
         "Residual income from every transaction",
-        "Scalable business model",
-        "Low startup costs",
-        "Ongoing technical support"
-      ],
-      highlight: "Earn 0.5-1.5% of every transaction processed",
-      animationDelay: "0"
+        "No technical knowledge required",
+        "Full training and support provided",
+        "Scalable business model"
+      ]
     },
     {
-      id: 2,
-      icon: <FaHandshake className="text-3xl text-primary-500" />,
-      title: "High-Ticket B2B Sales",
-      description: "Access premium leads through our proprietary funnels and close high-value deals with businesses. We provide the leads, training, and support system to help you succeed.",
-      features: [
-        "Exclusive lead generation system",
-        "Proven sales scripts and frameworks",
-        "Comprehensive training program",
-        "High commission structure"
-      ],
-      highlight: "Earn $5,000-$25,000 per closed deal",
-      animationDelay: "100"
+      icon: <FaHandshake className="text-4xl text-primary-500 mb-4" />,
+      title: "B2B Sales",
+      description: "Leverage our proven sales systems to close high-ticket deals with businesses. We provide the leads, training, and support.",
+      benefits: [
+        "High commission structure",
+        "Proven sales scripts and processes",
+        "Weekly coaching and mentorship",
+        "No cold calling required"
+      ]
     },
     {
-      id: 3,
-      icon: <FaChalkboardTeacher className="text-3xl text-primary-500" />,
-      title: "High-End Closer Training",
-      description: "Learn to become an elite sales professional who can close high-ticket deals. Our comprehensive training program will transform you into a top-tier closer with the skills to earn substantial commissions.",
-      features: [
-        "Advanced psychology and persuasion techniques",
-        "Objection handling mastery",
-        "High-ticket closing frameworks",
-        "Ongoing mentorship from top closers"
-      ],
-      highlight: "Earn $10,000-$50,000 monthly as a trained closer",
-      animationDelay: "200"
+      icon: <FaChalkboardTeacher className="text-4xl text-primary-500 mb-4" />,
+      title: "Sales Coaching",
+      description: "Help others improve their sales skills through our structured coaching program. Perfect for those with sales experience.",
+      benefits: [
+        "Recurring revenue from coaching clients",
+        "Proven curriculum and materials provided",
+        "Flexible schedule and location",
+        "High-impact, rewarding work"
+      ]
     },
     {
-      id: 4,
-      icon: <FaRobot className="text-3xl text-primary-500" />,
-      title: "AI Business Strategies",
-      description: "Implement cutting-edge AI solutions for businesses and get paid based on the results you deliver. Our pay-by-outcome model ensures clients see value and you maximize earnings.",
-      features: [
-        "Proprietary AI implementation frameworks",
-        "Technical support from our team",
-        "Performance-based compensation",
-        "Exclusive access to AI tools and resources"
-      ],
-      highlight: "Earn 15-30% of the value you create",
-      animationDelay: "300"
+      icon: <FaRobot className="text-4xl text-primary-500 mb-4" />,
+      title: "AI Strategies",
+      description: "Implement cutting-edge AI solutions for businesses looking to automate and scale. No coding experience required.",
+      benefits: [
+        "Be at the forefront of technology",
+        "Solve real business problems",
+        "High-value service with premium pricing",
+        "Ongoing support and updates"
+      ]
     },
     {
-      id: 5,
-      icon: <FaChartLine className="text-3xl text-primary-500" />,
+      icon: <FaBullhorn className="text-4xl text-primary-500 mb-4" />,
       title: "Results-Based Marketing",
-      description: "Offer marketing services where you only get paid when you deliver results. Our proven systems and templates make it easy to create winning campaigns for clients.",
-      features: [
-        "Done-for-you marketing templates",
-        "Campaign management tools",
-        "Performance tracking dashboard",
-        "Client acquisition support"
-      ],
-      highlight: "Earn 20-40% of revenue generated",
-      animationDelay: "400"
-    },
-    {
-      id: 6,
-      icon: <FaBitcoin className="text-3xl text-primary-500" />,
-      title: "Crypto & Trading Opportunities",
-      description: "Coming soon: Vetted opportunities in cryptocurrency and trading markets. We're partnering with trusted professionals to bring you ethical, Sharia-compliant investment strategies.",
-      features: [
-        "Sharia-compliant investment options",
-        "Expert-led training and guidance",
-        "Risk management frameworks",
-        "Community support and networking"
-      ],
-      highlight: "Join the waitlist for early access",
-      animationDelay: "500"
+      description: "Help businesses generate leads and customers through our proven marketing frameworks. We provide the systems, you provide the execution.",
+      benefits: [
+        "Performance-based compensation",
+        "Proven marketing templates and strategies",
+        "Ongoing training and support",
+        "Scalable client base"
+      ]
     }
   ];
 
-  const verticals = [
-    {
-      icon: <FaSolarPanel className="text-2xl text-primary-500" />,
-      title: "Solar Energy",
-      description: "High-converting lead funnels for the booming solar industry, with qualified prospects ready to invest in renewable energy solutions."
-    },
-    {
-      icon: <FaOilCan className="text-2xl text-primary-500" />,
-      title: "Oil & Lubricants",
-      description: "Specialized B2B lead generation for industrial lubricants, automotive oils, and related products with high commission potential."
-    },
-    {
-      icon: <FaIndustry className="text-2xl text-primary-500" />,
-      title: "Industrial Equipment",
-      description: "Premium leads for high-ticket industrial machinery, equipment, and services with established buying intent."
-    }
-  ];
+  const [activeTab, setActiveTab] = React.useState(0);
 
   return (
-    <section id="opportunity" className="py-20 bg-secondary-900">
+    <section id="opportunity" className="py-20 bg-secondary-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="section-title">Exclusive Opportunities</h2>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-gray-300">
-              Blueprint313 provides multiple pathways to wealth creation, all vetted and proven to work. Join our waitlist to be the first to access these opportunities when we launch.
-            </p>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="section-title">Wealth Creation Opportunities</h2>
+          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+            We've identified multiple proven paths to wealth that don't require traditional education or massive startup capital. Each opportunity is vetted, ethical, and aligned with Shia values.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {opportunities.map((opportunity) => (
-            <div 
-              key={opportunity.id} 
-              className={`bg-secondary-800 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow hover:-translate-y-2 overflow-hidden border border-secondary-700 animate-slide-up`}
-              style={{animationDelay: `${opportunity.animationDelay}ms`}}
-            >
-              <div className="p-6">
+        <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="flex flex-wrap border-b border-gray-200">
+            {opportunities.map((opportunity, index) => (
+              <button
+                key={index}
+                className={`py-4 px-6 font-medium text-sm sm:text-base transition-colors duration-300 ${
+                  activeTab === index
+                    ? 'text-primary-600 border-b-2 border-primary-600'
+                    : 'text-secondary-600 hover:text-primary-500'
+                }`}
+                onClick={() => setActiveTab(index)}
+              >
+                {opportunity.title}
+              </button>
+            ))}
+          </div>
+
+          <div className="p-6 md:p-8">
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-primary-900 bg-opacity-50 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
-                    {opportunity.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{opportunity.title}</h3>
+                  {opportunities[activeTab].icon}
+                  <h3 className="text-2xl font-bold text-secondary-900">{opportunities[activeTab].title}</h3>
                 </div>
-                <p className="text-gray-300 mb-4">{opportunity.description}</p>
-                <div className="bg-primary-900 bg-opacity-30 p-4 rounded-lg mb-4 border border-primary-800">
-                  <span className="font-semibold text-primary-400">{opportunity.highlight}</span>
-                </div>
-                <ul className="space-y-2 mb-4">
-                  {opportunity.features.map((feature, index) => (
+                <p className="text-secondary-700 mb-6">
+                  {opportunities[activeTab].description}
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {opportunities[activeTab].benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-primary-500 mr-2">✓</span>
-                      <span className="text-gray-300">{feature}</span>
+                      <span className="text-primary-600 mr-2">✓</span>
+                      <span className="text-secondary-700">{benefit}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div className="bg-gradient-to-r from-primary-900 to-secondary-800 p-4 border-t border-secondary-700">
-                <button className="w-full bg-secondary-900 hover:bg-secondary-800 text-primary-400 font-medium py-2 px-4 rounded-lg border border-primary-700 transition-all duration-300 hover:text-primary-300 flex items-center justify-center">
-                  <FaShieldAlt className="mr-2" /> Join Waitlist
+                <button className="inline-flex items-center font-medium text-primary-600 hover:text-primary-500 transition-colors duration-300 group">
+                  Learn more about this opportunity
+                  <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-20 animate-slide-up animate-delay-300">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-white mb-4">Lead Generation Verticals</h3>
-            <p className="text-gray-300 max-w-3xl mx-auto">
-              Our proprietary lead funnels supply high-quality prospects across multiple industries, giving you access to lucrative markets with proven conversion rates.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {verticals.map((vertical, index) => (
-              <div key={index} className="bg-secondary-800 p-6 rounded-xl shadow-md border border-secondary-700 transform transition-all duration-300 hover:shadow-glow hover:-translate-y-1">
-                <div className="w-12 h-12 bg-primary-900 bg-opacity-50 rounded-full flex items-center justify-center mb-4 animate-pulse-glow">
-                  {vertical.icon}
+              <div className="md:w-1/2 md:pl-8 border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0 md:pl-8">
+                <div className="bg-secondary-50 rounded-lg p-6">
+                  <h4 className="text-xl font-semibold mb-4 text-secondary-900">Success Story</h4>
+                  <div className="mb-6">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
+                        <span className="text-primary-600 font-bold">MH</span>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-secondary-900">Mohammed H.</h5>
+                        <p className="text-sm text-secondary-600">Started 8 months ago</p>
+                      </div>
+                    </div>
+                    <p className="text-secondary-700 italic">
+                      "I was skeptical at first, but after following the Blueprint313 system for this opportunity, I'm now earning more monthly than I did in my previous full-time job. The training and support have been incredible."
+                    </p>
+                  </div>
+                  <div className="border-t border-gray-200 pt-4">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="text-sm text-secondary-600">Monthly Income</p>
+                        <p className="text-xl font-bold text-secondary-900">$8,500 - $12,000</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-secondary-600">Hours Per Week</p>
+                        <p className="text-xl font-bold text-secondary-900">15-20</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2">{vertical.title}</h4>
-                <p className="text-gray-300">{vertical.description}</p>
+                <div className="mt-6">
+                  <h4 className="text-xl font-semibold mb-4 text-secondary-900">Requirements</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                        <span className="text-green-600 text-sm">✓</span>
+                      </span>
+                      <span className="text-secondary-700">Strong work ethic</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                        <span className="text-green-600 text-sm">✓</span>
+                      </span>
+                      <span className="text-secondary-700">Willingness to learn</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                        <span className="text-green-600 text-sm">✓</span>
+                      </span>
+                      <span className="text-secondary-700">Commitment to follow the system</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                        <span className="text-red-600 text-sm">✗</span>
+                      </span>
+                      <span className="text-secondary-700">No degree required</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                        <span className="text-red-600 text-sm">✗</span>
+                      </span>
+                      <span className="text-secondary-700">No large startup capital needed</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-16 bg-gradient-to-br from-primary-900 to-secondary-800 rounded-2xl p-8 shadow-md border border-secondary-700 animate-slide-up animate-delay-400">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white">Why Choose Blueprint313?</h3>
-            <p className="text-gray-300 mt-2">Our opportunities are specifically selected based on these criteria:</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-secondary-800 p-6 rounded-xl shadow-sm border border-secondary-700 transform transition-all duration-300 hover:shadow-glow hover:-translate-y-1">
-              <div className="w-12 h-12 bg-primary-900 bg-opacity-50 rounded-full flex items-center justify-center mb-4 animate-pulse-glow">
-                <FaShieldAlt className="text-primary-500 text-xl" />
-              </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Ethical & Sharia-Compliant</h4>
-              <p className="text-gray-300">All opportunities align with Shia values and ethical business practices.</p>
-            </div>
-            
-            <div className="bg-secondary-800 p-6 rounded-xl shadow-sm border border-secondary-700 transform transition-all duration-300 hover:shadow-glow hover:-translate-y-1">
-              <div className="w-12 h-12 bg-primary-900 bg-opacity-50 rounded-full flex items-center justify-center mb-4 animate-pulse-glow">
-                <FaChartLine className="text-primary-500 text-xl" />
-              </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Proven & Profitable</h4>
-              <p className="text-gray-300">Each opportunity has been tested and proven to generate significant income.</p>
-            </div>
-            
-            <div className="bg-secondary-800 p-6 rounded-xl shadow-sm border border-secondary-700 transform transition-all duration-300 hover:shadow-glow hover:-translate-y-1">
-              <div className="w-12 h-12 bg-primary-900 bg-opacity-50 rounded-full flex items-center justify-center mb-4 animate-pulse-glow">
-                <FaHandshake className="text-primary-500 text-xl" />
-              </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Supported & Guided</h4>
-              <p className="text-gray-300">You'll receive comprehensive training and ongoing support to succeed.</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 text-center animate-slide-up animate-delay-500">
-          <button className="btn-primary">
-            Join the Waitlist Now
+        <div className="mt-12 text-center">
+          <button className="bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105">
+            Join Waitlist to Learn More
           </button>
-          <p className="mt-4 text-gray-400">Only 110 spots available for our initial launch</p>
         </div>
       </div>
     </section>

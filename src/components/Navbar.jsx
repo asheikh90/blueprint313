@@ -30,89 +30,84 @@ const Navbar = () => {
     { name: 'About', to: 'about' },
     { name: 'Opportunities', to: 'opportunity' },
     { name: 'Benefits', to: 'benefits' },
-    { name: 'Experts', to: 'experts' },
-    { name: 'Success Stories', to: 'testimonials' }
+    { name: 'Pricing', to: 'pricing' },
+    { name: 'Investor Network', to: 'investor-network' },
+    { name: 'Franchise', to: 'franchise' },
+    { name: 'Team', to: 'experts' },
+    { name: 'Testimonials', to: 'testimonials' }
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-secondary-900 shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-secondary-900 shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold">
-              <span className={`${scrolled ? 'text-primary-500' : 'text-white'}`}>Blueprint</span>
-              <span className={`${scrolled ? 'text-white' : 'text-primary-400'}`}>313</span>
-            </a>
+            <Link to="hero" smooth={true} duration={500} className="cursor-pointer">
+              <span className="text-2xl font-bold text-white">Blueprint<span className="text-primary-500">313</span></span>
+            </Link>
           </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link, index) => (
               <Link
                 key={index}
                 to={link.to}
-                spy={true}
                 smooth={true}
-                offset={-70}
                 duration={500}
-                className={`cursor-pointer font-medium hover:text-primary-400 transition-colors duration-300 ${
-                  scrolled ? 'text-gray-300' : 'text-white'
-                }`}
+                offset={-70}
+                className="text-gray-300 hover:text-primary-400 transition-colors duration-300 cursor-pointer"
               >
                 {link.name}
               </Link>
             ))}
-          </div>
-
-          <div className="hidden md:block">
-            <button className={`${
-              scrolled 
-                ? 'bg-primary-600 hover:bg-primary-500 text-white' 
-                : 'bg-white bg-opacity-10 hover:bg-opacity-20 text-white backdrop-filter backdrop-blur-sm border border-white border-opacity-20'
-            } font-medium py-2 px-6 rounded-lg transition-all duration-300 hover:scale-105`}>
+            <Link
+              to="cta"
+              smooth={true}
+              duration={500}
+              className="bg-primary-600 hover:bg-primary-500 text-white px-5 py-2 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+            >
               Join Waitlist
-            </button>
+            </Link>
           </div>
-
-          {/* Mobile Navigation Toggle */}
-          <div className="md:hidden">
+          
+          <div className="lg:hidden">
             <button
               onClick={toggleMenu}
-              className={`${scrolled ? 'text-white' : 'text-white'} focus:outline-none`}
+              className="text-white focus:outline-none"
+              aria-label="Toggle menu"
             >
               {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
         </div>
       </div>
-
-      {/* Mobile Navigation Menu */}
-      <div
-        className={`md:hidden fixed inset-0 z-40 bg-secondary-900 bg-opacity-95 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col h-full justify-center items-center">
-          <div className="space-y-6">
+      
+      {/* Mobile menu */}
+      <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} bg-secondary-900 shadow-xl`}>
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-col space-y-4">
             {navLinks.map((link, index) => (
               <Link
                 key={index}
                 to={link.to}
-                spy={true}
                 smooth={true}
-                offset={-70}
                 duration={500}
-                className="block text-white text-xl font-medium text-center hover:text-primary-400 transition-colors duration-300"
+                offset={-70}
+                className="text-gray-300 hover:text-primary-400 transition-colors duration-300 py-2 cursor-pointer"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="pt-6">
-              <button className="bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105">
-                Join Waitlist
-              </button>
-            </div>
+            <Link
+              to="cta"
+              smooth={true}
+              duration={500}
+              className="bg-primary-600 hover:bg-primary-500 text-white px-5 py-3 rounded-lg transition-all duration-300 text-center cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            >
+              Join Waitlist
+            </Link>
           </div>
         </div>
       </div>

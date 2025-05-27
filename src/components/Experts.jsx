@@ -1,150 +1,146 @@
 import React from 'react';
-import { FaUserTie, FaGraduationCap, FaChartLine, FaLaptopCode, FaHandshake, FaMoneyBillWave, FaRegLightbulb, FaShieldAlt, FaUsers, FaArrowRight } from 'react-icons/fa';
+import { FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Experts = () => {
-  const expertCategories = [
+  const experts = [
     {
-      icon: <FaMoneyBillWave className="text-3xl text-primary-500" />,
-      title: "Payment Processing",
-      description: "Expert with proven track record in merchant services and payment processing systems."
+      name: "Ali H Sheikh",
+      role: "Founder & Lead Strategist",
+      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      bio: "Ali H Sheikh is a multi-disciplinary entrepreneur and strategist with a track record of building scalable operations in the automotive, tech, and consulting industries. He currently owns and operates two auto body shops in Pennsylvania and New Jersey, and is scaling several niche ventures including DriveCal (ADAS calibration), Refinery X / BlackForge Lubricants (oil and lubricant distribution), and BookedByAI (AI-powered client acquisition and automation services).\n\nAli's background includes a strong foundation in sales, management, recruiting, and training, having led high-performance teams across industries. He combines sharp execution with systems thinking, enabling him to build, optimize, and scale businesses from zero to growth mode using lean, data-backed strategies.\n\nBorn in Queens and shaped by a diverse journey through corporate leadership and community building, Ali now focuses on empowering others through platforms like Blueprint313 — a launchpad for Shia Muslim entrepreneurs — and Ghadeer Club, a nonprofit gaming and content creator network.\n\nA relentless operator and first-principles thinker, Ali doesn't chase trends — he builds ecosystems.",
+      social: {
+        linkedin: "https://linkedin.com/in/alihsheikh",
+        twitter: "https://twitter.com/alihsheikh",
+        instagram: "https://instagram.com/alihsheikh"
+      }
     },
     {
-      icon: <FaHandshake className="text-3xl text-primary-500" />,
-      title: "B2B Sales",
-      description: "Elite closer with experience in high-ticket B2B sales and account management."
+      name: "Sarah Jafri",
+      role: "Business Development",
+      image: "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      bio: "Sarah specializes in helping businesses scale through strategic partnerships and innovative growth strategies.",
+      social: {
+        linkedin: "#",
+        twitter: "#",
+        instagram: "#"
+      }
     },
     {
-      icon: <FaGraduationCap className="text-3xl text-primary-500" />,
-      title: "Sales Training",
-      description: "Sales coach who has developed top-performing sales teams and methodologies."
-    },
-    {
-      icon: <FaLaptopCode className="text-3xl text-primary-500" />,
-      title: "AI Implementation",
-      description: "AI specialist who has successfully integrated AI solutions for business growth."
-    },
-    {
-      icon: <FaChartLine className="text-3xl text-primary-500" />,
-      title: "Performance Marketing",
-      description: "Results-driven marketer with expertise in pay-for-performance campaigns."
-    },
-    {
-      icon: <FaUserTie className="text-3xl text-primary-500" />,
-      title: "Crypto & Trading",
-      description: "Ethical investment expert with proven success in Sharia-compliant trading."
+      name: "Hasan Rizvi",
+      role: "Financial Advisor",
+      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      bio: "Hasan has over 15 years of experience in financial planning and wealth management for entrepreneurs.",
+      social: {
+        linkedin: "#",
+        twitter: "#",
+        instagram: "#"
+      }
     }
   ];
 
+  const [selectedExpert, setSelectedExpert] = React.useState(null);
+
+  const openBioModal = (expert) => {
+    setSelectedExpert(expert);
+  };
+
+  const closeBioModal = () => {
+    setSelectedExpert(null);
+  };
+
   return (
-    <section id="experts" className="py-20 bg-dark-bg">
+    <section id="experts" className="py-20 bg-secondary-900">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="section-title">Join Our Expert Network</h2>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-gray-300">
-              We're seeking 12 elite professionals with proven track records to provide exceptional value in their respective fields. Join our exclusive network of experts and help shape the future of wealth creation in the Shia community.
-            </p>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="section-title text-white">Meet Our Experts</h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            Our team of industry professionals brings decades of combined experience in alternative wealth creation strategies.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {expertCategories.map((category, index) => (
-            <div 
-              key={index} 
-              className="bg-secondary-900 rounded-xl p-6 border border-secondary-800 shadow-md transition-all duration-300 hover:shadow-glow hover:-translate-y-1 animate-slide-up"
-              style={{animationDelay: `${index * 100}ms`}}
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-14 h-14 bg-primary-900 bg-opacity-50 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
-                  {category.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white">{category.title} Expert</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {experts.map((expert, index) => (
+            <div key={index} className="bg-secondary-800 rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-glow">
+              <div className="h-64 overflow-hidden">
+                <img 
+                  src={expert.image} 
+                  alt={expert.name} 
+                  className="w-full h-full object-cover object-center transform transition-transform duration-500 hover:scale-110"
+                />
               </div>
-              <p className="text-gray-300 mb-6">{category.description}</p>
-              <div className="flex justify-between items-center">
-                <span className="text-primary-400 font-medium">1 of 2 positions open</span>
-                <button className="text-white bg-primary-700 hover:bg-primary-600 px-4 py-2 rounded-lg transition-all duration-300 flex items-center">
-                  Apply <FaArrowRight className="ml-2" />
-                </button>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-1">{expert.name}</h3>
+                <p className="text-primary-400 mb-4">{expert.role}</p>
+                <p className="text-gray-300 mb-6 line-clamp-3">
+                  {expert.bio.split('\n')[0]}
+                </p>
+                <div className="flex justify-between items-center">
+                  <button 
+                    onClick={() => openBioModal(expert)}
+                    className="text-primary-400 hover:text-primary-300 font-medium transition-colors duration-300"
+                  >
+                    Read Full Bio
+                  </button>
+                  <div className="flex space-x-3">
+                    <a href={expert.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                      <FaLinkedinIn />
+                    </a>
+                    <a href={expert.social.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                      <FaTwitter />
+                    </a>
+                    <a href={expert.social.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                      <FaInstagram />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
 
-        <div className="bg-gradient-to-br from-primary-900 to-secondary-800 rounded-xl p-8 border border-secondary-700 shadow-glow animate-slide-up animate-delay-300">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Why Join Our Expert Network?</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                    <FaRegLightbulb className="text-white text-sm" />
+      {/* Bio Modal */}
+      {selectedExpert && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70">
+          <div className="bg-secondary-800 rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6 md:p-8">
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-white">{selectedExpert.name}</h3>
+                  <p className="text-primary-400">{selectedExpert.role}</p>
+                </div>
+                <button 
+                  onClick={closeBioModal}
+                  className="text-gray-400 hover:text-white transition-colors duration-300 text-xl"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="prose prose-invert max-w-none">
+                {selectedExpert.bio.split('\n\n').map((paragraph, i) => (
+                  <p key={i} className="text-gray-300 mb-4">{paragraph}</p>
+                ))}
+              </div>
+              <div className="mt-8 pt-6 border-t border-secondary-700">
+                <div className="flex justify-between items-center">
+                  <p className="text-gray-400">Connect with {selectedExpert.name.split(' ')[0]}</p>
+                  <div className="flex space-x-4">
+                    <a href={selectedExpert.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                      <FaLinkedinIn size={20} />
+                    </a>
+                    <a href={selectedExpert.social.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                      <FaTwitter size={20} />
+                    </a>
+                    <a href={selectedExpert.social.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                      <FaInstagram size={20} />
+                    </a>
                   </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Share Your Expertise</h4>
-                    <p className="text-gray-300">Help others succeed while establishing yourself as a thought leader in your field.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                    <FaUsers className="text-white text-sm" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Exclusive Network</h4>
-                    <p className="text-gray-300">Connect with other elite professionals in the Shia community.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                    <FaMoneyBillWave className="text-white text-sm" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Lucrative Compensation</h4>
-                    <p className="text-gray-300">Earn substantial income through our revenue-sharing model.</p>
-                  </div>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">What We're Looking For</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                    <FaChartLine className="text-white text-sm" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Proven Track Record</h4>
-                    <p className="text-gray-300">Demonstrated success and expertise in your specific field.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                    <FaShieldAlt className="text-white text-sm" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Ethical Approach</h4>
-                    <p className="text-gray-300">Commitment to Sharia-compliant and ethical business practices.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                    <FaGraduationCap className="text-white text-sm" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Teaching Ability</h4>
-                    <p className="text-gray-300">Skill in communicating complex concepts in an accessible way.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 text-center">
-            <button className="bg-white text-primary-700 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-              Apply to Join Our Expert Network
-            </button>
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
