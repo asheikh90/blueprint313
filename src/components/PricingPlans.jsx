@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import { FaCheck, FaTimes, FaArrowRight, FaUsers, FaLightbulb, FaRocket, FaBuilding } from 'react-icons/fa';
 
 const PricingPlans = () => {
@@ -132,10 +133,15 @@ const PricingPlans = () => {
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center ${plan.buttonClass}`}>
+                <Link 
+                  to="cta" 
+                  smooth={true} 
+                  duration={500}
+                  className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center ${plan.buttonClass}`}
+                >
                   {plan.buttonText}
                   <FaArrowRight className="ml-2" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

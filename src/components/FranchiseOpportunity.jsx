@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import { FaStore, FaChartLine, FaUserTie, FaTools, FaRegHandshake } from 'react-icons/fa';
 
 const FranchiseOpportunity = () => {
@@ -96,9 +97,14 @@ const FranchiseOpportunity = () => {
               ))}
             </div>
             <div className="mt-8">
-              <button className="bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 w-full">
+              <Link 
+                to="cta" 
+                smooth={true} 
+                duration={500}
+                className="bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 w-full flex items-center justify-center"
+              >
                 Join Franchise Waitlist
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -156,9 +162,14 @@ const FranchiseOpportunity = () => {
           </div>
           <div className="mt-8 text-center">
             <p className="text-gray-400 mb-4">Limited to only 10 franchise territories in the next 12 months</p>
-            <button className="bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105">
+            <Link 
+              to="cta" 
+              smooth={true} 
+              duration={500}
+              className="bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 inline-flex items-center justify-center"
+            >
               Request Franchise Information Package
-            </button>
+            </Link>
           </div>
         </div>
       </div>
