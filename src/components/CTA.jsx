@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { supabase } from '../lib/supabase';
 
 const CTA = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ const CTA = () => {
     email: '',
     interest: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,18 +19,46 @@ const CTA = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      interest: ''
-    });
-    // Show success message or redirect
-    alert('Thank you for joining our waitlist! We will contact you soon.');
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      // Insert data into Supabase
+      const { data, error } = await supabase
+        .from('waitlist')
+        .insert([
+          { 
+            name: formData.name,
+            email: formData.email,
+            interest: formData.interest
+          }
+        ]);
+      
+      if (error) throw error;
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        interest: ''
+      });
+      
+      // Show success message
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for joining our waitlist! We will contact you soon.'
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'There was an error submitting your information. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -76,6 +107,7 @@ const CTA = () => {
                   placeholder="Your Name" 
                   className="flex-1 px-4 py-3 rounded-lg bg-dark-900 text-white placeholder-gray-400 border border-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   required
+                  disabled={isSubmitting}
                 />
                 <input 
                   type="email" 
@@ -85,6 +117,7 @@ const CTA = () => {
                   placeholder="Your Email" 
                   className="flex-1 px-4 py-3 rounded-lg bg-dark-900 text-white placeholder-gray-400 border border-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div className="mb-6">
@@ -94,6 +127,7 @@ const CTA = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-dark-900 text-white border border-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   required
+                  disabled={isSubmitting}
                 >
                   <option value="" className="bg-dark-800">I'm interested in...</option>
                   <option value="community" className="bg-dark-800">Free Community</option>
@@ -102,12 +136,20 @@ const CTA = () => {
                   <option value="franchise" className="bg-dark-800">Franchise Opportunity ($100K)</option>
                 </select>
               </div>
+              
+              {submitStatus && (
+                <div className={`mb-6 p-4 rounded-lg ${submitStatus.type === 'success' ? 'bg-green-800 bg-opacity-20 text-green-300 border border-green-700' : 'bg-red-800 bg-opacity-20 text-red-300 border border-red-700'}`}>
+                  {submitStatus.message}
+                </div>
+              )}
+              
               <button 
                 type="submit"
-                className="w-full bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center"
+                className={`w-full bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                disabled={isSubmitting}
               >
-                Join the Waitlist
-                <FaArrowRight className="ml-2" />
+                {isSubmitting ? 'Submitting...' : 'Join the Waitlist'}
+                {!isSubmitting && <FaArrowRight className="ml-2" />}
               </button>
             </form>
             
