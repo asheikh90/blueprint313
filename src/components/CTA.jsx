@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaArrowRight, FaMobile } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 
 const CTA = () => {
   const [formData, setFormData] = useState({
@@ -28,15 +28,6 @@ const CTA = () => {
     });
     // Show success message or redirect
     alert('Thank you for joining our waitlist! We will contact you soon.');
-  };
-
-  const handleSMSClick = () => {
-    const phoneNumber = "7327638486";
-    const message = "Hi, I'm interested in the Blueprint313 initiative.\n\nMy name is [Your Name]. I'm from [Your City/State], and I'm interested in [Briefly describe your background and what aspect of Blueprint313 you're excited about—e.g., business scaling, AI tools, community, etc.].";
-    
-    // Create the SMS link with the preset message
-    const smsLink = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
-    window.location.href = smsLink;
   };
 
   return (
@@ -119,25 +110,6 @@ const CTA = () => {
                 <FaArrowRight className="ml-2" />
               </button>
             </form>
-            
-            <div className="mt-8 p-4 bg-dark-700 rounded-lg border border-dark-600">
-              <div className="flex items-center">
-                <FaMobile className="text-primary-400 text-xl mr-3" />
-                <div>
-                  <p className="text-white font-medium">Phone Number (SMS Enabled):</p>
-                  <a 
-                    href="#" 
-                    onClick={handleSMSClick}
-                    className="text-primary-300 text-lg font-bold hover:text-primary-400 transition-colors"
-                  >
-                    📱 (732) 763-8486
-                  </a>
-                </div>
-              </div>
-              <p className="text-gray-400 text-sm mt-2">
-                Click the number to send a pre-filled SMS message about your interest
-              </p>
-            </div>
             
             <p className="text-gray-400 mt-4 text-sm">
               By joining our waitlist, you'll be the first to know when we launch and receive exclusive early-access benefits.
