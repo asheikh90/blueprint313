@@ -36,21 +36,21 @@ const InvestorNetwork = () => {
       description: "AI-powered solutions for small businesses",
       investment: "$50K - $250K",
       return: "Projected 3.2x ROI in 36 months",
-      stage: "Growth"
+      stage: "Coming Soon"
     },
     {
       industry: "Healthcare",
       description: "Innovative medical device manufacturing",
       investment: "$100K - $500K",
       return: "Projected 2.8x ROI in 48 months",
-      stage: "Expansion"
+      stage: "Coming Soon"
     },
     {
       industry: "Real Estate",
       description: "Commercial property development in emerging markets",
       investment: "$250K - $1M",
       return: "Projected 2.5x ROI in 60 months",
-      stage: "Established"
+      stage: "Coming Soon"
     }
   ];
 
@@ -61,6 +61,9 @@ const InvestorNetwork = () => {
           <h2 className="section-title">Shia Investor Network</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Connect with vetted Shia entrepreneurs and access exclusive investment opportunities with proven business models.
+          </p>
+          <p className="mt-4 text-primary-400 font-medium">
+            Coming Soon - Join the waitlist to be first to access our investor network
           </p>
         </div>
 
@@ -85,7 +88,7 @@ const InvestorNetwork = () => {
             </div>
             <div className="mt-8">
               <button className="bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
-                Apply to Join Investor Network
+                Join Investor Network Waitlist
               </button>
             </div>
           </div>
@@ -110,9 +113,9 @@ const InvestorNetwork = () => {
               ))}
             </div>
             <div className="mt-6 text-center">
-              <p className="text-gray-400 text-sm mb-2">These are sample opportunities. Actual investments require full due diligence.</p>
+              <p className="text-gray-400 text-sm mb-2">These are sample opportunities. Actual investments will be available after launch.</p>
               <button className="text-primary-400 hover:text-primary-300 font-medium transition-colors duration-300">
-                View All Opportunities
+                Get Notified When Live
               </button>
             </div>
           </div>
@@ -123,10 +126,10 @@ const InvestorNetwork = () => {
             <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
               <h3 className="text-2xl font-bold mb-4 text-white">For Entrepreneurs</h3>
               <p className="text-gray-300 mb-4">
-                If you're a Shia entrepreneur with a proven business model seeking investment to scale, our network provides access to aligned investors who understand your vision and values.
+                If you're a Shia entrepreneur with a proven business model seeking investment to scale, our network will provide access to aligned investors who understand your vision and values.
               </p>
               <p className="text-gray-300 mb-6">
-                We carefully vet all businesses to ensure they meet our standards for ethical practices, growth potential, and community impact.
+                We'll carefully vet all businesses to ensure they meet our standards for ethical practices, growth potential, and community impact.
               </p>
               <h4 className="text-xl font-semibold mb-3 text-white">Requirements:</h4>
               <ul className="space-y-2 mb-6">
@@ -148,40 +151,28 @@ const InvestorNetwork = () => {
                 </li>
               </ul>
               <button className="bg-secondary-700 hover:bg-secondary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300">
-                Apply for Funding
+                Apply for Future Funding
               </button>
             </div>
             <div className="md:w-1/2 md:pl-8 border-t md:border-t-0 md:border-l border-secondary-700 pt-6 md:pt-0 md:pl-8">
-              <h3 className="text-2xl font-bold mb-4 text-white">Success Story</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">Why We're Building This</h3>
               <div className="bg-secondary-800 rounded-lg p-6 mb-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-900 flex items-center justify-center mr-4">
-                    <span className="text-primary-300 font-bold">AJ</span>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-white">Ahmed J.</h5>
-                    <p className="text-sm text-gray-400">MedTech Founder</p>
-                  </div>
-                </div>
-                <p className="text-gray-300 italic mb-4">
-                  "Through Blueprint313's investor network, we secured $350K in funding from fellow Shia investors who understood our vision. This allowed us to scale our medical device company while maintaining our ethical standards. The investors brought not just capital, but valuable industry connections."
+                <p className="text-gray-300 mb-4">
+                  Through my years of business experience, I've seen how difficult it can be for Shia entrepreneurs to find aligned investors who understand both their business goals and ethical considerations.
                 </p>
-                <div className="border-t border-secondary-700 pt-4">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-sm text-gray-400">Investment Secured</p>
-                      <p className="text-xl font-bold text-white">$350,000</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-400">Current Valuation</p>
-                      <p className="text-xl font-bold text-white">$4.2M</p>
-                    </div>
-                  </div>
-                </div>
+                <p className="text-gray-300 mb-4">
+                  At the same time, many Shia professionals with capital to invest struggle to find vetted, ethical opportunities that align with their values.
+                </p>
+                <p className="text-gray-300">
+                  Blueprint313's investor network aims to bridge this gap, creating a trusted platform where capital meets opportunity within our community.
+                </p>
               </div>
-              <p className="text-gray-400 text-sm">
-                Our network has facilitated over $2.5M in investments across 12 Shia-owned businesses in the last 18 months, with an average return of 2.7x for investors.
-              </p>
+              <div className="bg-primary-900 rounded-lg p-6">
+                <h4 className="text-xl font-semibold text-white mb-3">Prelaunch Phase</h4>
+                <p className="text-gray-300">
+                  We're currently in the prelaunch phase of our investor network. Join the waitlist to be notified when we officially launch and gain early access to investment opportunities.
+                </p>
+              </div>
             </div>
           </div>
         </div>

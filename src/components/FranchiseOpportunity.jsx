@@ -38,6 +38,9 @@ const FranchiseOpportunity = () => {
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Secure your spot to own an exclusive franchise in the next 12 months with potential earnings of $200,000-$500,000 annually.
           </p>
+          <p className="mt-4 text-primary-400 font-medium">
+            Coming Soon - Limited to only 10 franchise territories
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
@@ -94,20 +97,20 @@ const FranchiseOpportunity = () => {
             </div>
             <div className="mt-8">
               <button className="bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 w-full">
-                Apply for Franchise Opportunity
+                Join Franchise Waitlist
               </button>
             </div>
           </div>
         </div>
 
         <div className="bg-secondary-800 rounded-xl shadow-md p-8 border border-secondary-700">
-          <h3 className="text-2xl font-bold mb-6 text-white text-center">Franchise Success Story</h3>
+          <h3 className="text-2xl font-bold mb-6 text-white text-center">My Business Scaling Experience</h3>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
               <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-700">
                 <img 
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                  alt="Franchise Owner" 
+                  src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                  alt="Ali H Sheikh" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -115,16 +118,12 @@ const FranchiseOpportunity = () => {
             <div className="md:w-2/3 md:pl-8">
               <div className="bg-secondary-700 rounded-lg p-6">
                 <p className="text-gray-300 text-lg italic mb-6">
-                  "I invested in this franchise opportunity 18 months ago after careful research. The training was comprehensive, and the support has been exceptional. Following the system precisely, I generated $180K in my first year and am on track for $320K this year. The business model is solid, and the team is always available when I need guidance."
+                  "I've spent years developing and refining business systems that work across multiple industries. With Tennex Legal, we scaled from 3 to 30+ law firms in just 3 years. At One Investments, we built systems that allowed us to open 5+ offices and train 20+ team members who earned millions in commissions. I've also helped Maaco Auto Body grow from 1 to 2 locations while running multiple other businesses simultaneously."
                 </p>
                 <div className="flex justify-between items-center">
                   <div>
-                    <h5 className="font-semibold text-white">Hassan R.</h5>
-                    <p className="text-sm text-gray-400">Franchise Owner - Chicago</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">First Year Revenue</p>
-                    <p className="text-xl font-bold text-white">$180,000</p>
+                    <h5 className="font-semibold text-white">Ali H Sheikh</h5>
+                    <p className="text-sm text-gray-400">Founder, Blueprint313</p>
                   </div>
                 </div>
               </div>
@@ -133,23 +132,23 @@ const FranchiseOpportunity = () => {
                 <ol className="space-y-3">
                   <li className="flex items-start">
                     <span className="w-6 h-6 rounded-full bg-primary-700 flex items-center justify-center mr-3 text-white font-bold">1</span>
-                    <span className="text-gray-300">Submit initial application and qualification questionnaire</span>
+                    <span className="text-gray-300">Join the waitlist for early access when we launch</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-6 h-6 rounded-full bg-primary-700 flex items-center justify-center mr-3 text-white font-bold">2</span>
-                    <span className="text-gray-300">Introductory call to discuss the opportunity in detail</span>
+                    <span className="text-gray-300">Receive detailed franchise information package</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-6 h-6 rounded-full bg-primary-700 flex items-center justify-center mr-3 text-white font-bold">3</span>
-                    <span className="text-gray-300">Review comprehensive franchise disclosure document</span>
+                    <span className="text-gray-300">Schedule an introductory call to discuss the opportunity</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-6 h-6 rounded-full bg-primary-700 flex items-center justify-center mr-3 text-white font-bold">4</span>
-                    <span className="text-gray-300">Meet with existing franchise owners for validation</span>
+                    <span className="text-gray-300">Complete qualification process and application</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-6 h-6 rounded-full bg-primary-700 flex items-center justify-center mr-3 text-white font-bold">5</span>
-                    <span className="text-gray-300">Final approval and territory selection</span>
+                    <span className="text-gray-300">Secure your exclusive territory</span>
                   </li>
                 </ol>
               </div>

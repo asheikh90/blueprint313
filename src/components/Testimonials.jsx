@@ -4,25 +4,25 @@ import { FaQuoteLeft, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Fatima K.",
-      location: "Chicago, IL",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      text: "Blueprint313 completely changed my perspective on wealth creation. I was stuck in a 9-5 job with limited growth, but after implementing the strategies I learned, I've been able to build a business that generates more income with fewer hours.",
-      business: "E-commerce Store Owner"
+      name: "Tennex Legal",
+      location: "Law Firm Consulting",
+      image: "https://images.pexels.com/photos/5668859/pexels-photo-5668859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      text: "When I joined Tennex Legal, they had only 3 clients. I implemented marketing systems, AI strategies, and outsourcing solutions to retain more profit. Within 3 years, we scaled to serving over 30 law firms across the country.",
+      business: "Law Firm Consulting"
     },
     {
-      name: "Hussein M.",
-      location: "Houston, TX",
-      image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      text: "As someone who was skeptical of alternative income paths, I can honestly say that Blueprint313 delivered beyond my expectations. The community support and practical strategies helped me build a six-figure business in just 14 months.",
-      business: "Digital Marketing Agency"
+      name: "One Investments",
+      location: "Real Estate Investment",
+      image: "https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      text: "I helped develop comprehensive systems for One Investments, recruited and trained over 20 team members, and facilitated millions in commissions for our sales team. We successfully expanded to 5+ offices across North America.",
+      business: "Real Estate Investment"
     },
     {
-      name: "Zahra J.",
-      location: "Toronto, Canada",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      text: "What sets Blueprint313 apart is their focus on ethical business practices that align with Shia values. I never felt like I had to compromise my principles to succeed. Now I'm earning more while making a positive impact.",
-      business: "Health & Wellness Consultant"
+      name: "Maaco Auto Body",
+      location: "Auto Repair",
+      image: "https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      text: "While simultaneously running multiple businesses, I assisted Maaco Auto Body in growing from a single location to two thriving shops. I implemented systems that allowed for efficient scaling without sacrificing quality or customer satisfaction.",
+      business: "Auto Repair Franchise"
     }
   ];
 
@@ -40,9 +40,9 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 bg-secondary-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title">Success Stories</h2>
+          <h2 className="section-title">My Success Stories</h2>
           <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
-            Hear from members of our community who have successfully implemented our wealth creation strategies.
+            Before launching Blueprint313, I've helped scale multiple businesses across different industries. Here are some of the results I've achieved.
           </p>
         </div>
 
@@ -107,41 +107,47 @@ const Testimonials = () => {
             </div>
           </div>
           
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-md p-6 transform transition-all duration-300 hover:scale-105">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4 text-primary-600 font-bold">
-                  76%
+          <div className="mt-16 bg-white rounded-xl shadow-md p-8">
+            <h3 className="text-2xl font-bold text-secondary-900 mb-6">My Investment in This Blueprint</h3>
+            <p className="text-secondary-700 mb-6">
+              This is the first time I'm teaching the exact blueprint that helped me succeed. I've invested:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-secondary-50 rounded-xl shadow-md p-6 transform transition-all duration-300 hover:scale-105">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4 text-primary-600 font-bold">
+                    $$$
+                  </div>
+                  <h3 className="text-xl font-semibold text-secondary-900">Financial Investment</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-900">Increased Income</h3>
+                <p className="text-secondary-700">
+                  Hundreds of thousands of dollars invested in courses, training programs, and business tools to develop these systems.
+                </p>
               </div>
-              <p className="text-secondary-700">
-                76% of our members report at least doubling their income within the first year of implementing our strategies.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md p-6 transform transition-all duration-300 hover:scale-105">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4 text-primary-600 font-bold">
-                  92%
+              
+              <div className="bg-secondary-50 rounded-xl shadow-md p-6 transform transition-all duration-300 hover:scale-105">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4 text-primary-600 font-bold">
+                    ⏰
+                  </div>
+                  <h3 className="text-xl font-semibold text-secondary-900">Time Investment</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-900">Satisfaction Rate</h3>
+                <p className="text-secondary-700">
+                  Countless hours working holidays and weekends, sacrificing time with family to perfect these business systems.
+                </p>
               </div>
-              <p className="text-secondary-700">
-                92% of members report high satisfaction with the support, community, and results they've achieved through Blueprint313.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md p-6 transform transition-all duration-300 hover:scale-105">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4 text-primary-600 font-bold">
-                  68%
+              
+              <div className="bg-secondary-50 rounded-xl shadow-md p-6 transform transition-all duration-300 hover:scale-105">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4 text-primary-600 font-bold">
+                    🧠
+                  </div>
+                  <h3 className="text-xl font-semibold text-secondary-900">Experience</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-900">Time Freedom</h3>
+                <p className="text-secondary-700">
+                  Years of real-world testing, refining, and implementing these strategies across multiple industries and businesses.
+                </p>
               </div>
-              <p className="text-secondary-700">
-                68% of our members report working fewer hours while earning more money after implementing our business systems.
-              </p>
             </div>
           </div>
         </div>

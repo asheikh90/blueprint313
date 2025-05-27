@@ -18,7 +18,7 @@ const PricingPlans = () => {
         { text: "1-on-1 coaching", included: false },
         { text: "Opportunity access", included: false }
       ],
-      buttonText: "Join Free Community",
+      buttonText: "Join Waitlist",
       buttonClass: "border-2 border-primary-600 text-primary-600 hover:bg-primary-50"
     },
     {
@@ -37,7 +37,7 @@ const PricingPlans = () => {
         { text: "Exclusive workshops", included: true },
         { text: "Franchise opportunity", included: false }
       ],
-      buttonText: "Join Premium",
+      buttonText: "Join Waitlist",
       buttonClass: "bg-primary-600 hover:bg-primary-500 text-white",
       highlighted: true
     },
@@ -56,7 +56,7 @@ const PricingPlans = () => {
         { text: "Halal investment verification", included: true },
         { text: "Quarterly investment reports", included: true }
       ],
-      buttonText: "Apply Now",
+      buttonText: "Join Waitlist",
       buttonClass: "border-2 border-primary-600 text-primary-600 hover:bg-primary-50"
     },
     {
@@ -74,7 +74,7 @@ const PricingPlans = () => {
         { text: "Scaling guidance", included: true },
         { text: "Potential $200K-$500K annual earnings", included: true }
       ],
-      buttonText: "Learn More",
+      buttonText: "Join Waitlist",
       buttonClass: "bg-secondary-800 hover:bg-secondary-700 text-white"
     }
   ];
@@ -89,6 +89,9 @@ const PricingPlans = () => {
           </p>
           <p className="mt-4 text-primary-600 font-medium">
             This is not a get-rich-quick scheme. You will need to work for your success.
+          </p>
+          <p className="mt-2 text-secondary-600 font-medium">
+            We're currently in pre-launch phase. Join the waitlist to be notified when we launch.
           </p>
         </div>
 
