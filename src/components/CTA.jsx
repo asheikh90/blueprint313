@@ -1,9 +1,46 @@
-import React from 'react';
-import { FaArrowRight } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaArrowRight, FaMobile } from 'react-icons/fa';
 
 const CTA = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    interest: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log('Form submitted:', formData);
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      interest: ''
+    });
+    // Show success message or redirect
+    alert('Thank you for joining our waitlist! We will contact you soon.');
+  };
+
+  const handleSMSClick = () => {
+    const phoneNumber = "7327638486";
+    const message = "Hi, I'm interested in the Blueprint313 initiative.\n\nMy name is [Your Name]. I'm from [Your City/State], and I'm interested in [Briefly describe your background and what aspect of Blueprint313 you're excited about—e.g., business scaling, AI tools, community, etc.].";
+    
+    // Create the SMS link with the preset message
+    const smsLink = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
+    window.location.href = smsLink;
+  };
+
   return (
-    <section id="cta" className="py-20 bg-gradient-to-r from-primary-900 to-secondary-900">
+    <section id="cta" className="py-20 bg-gradient-to-r from-dark-900 to-dark-800">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -13,58 +50,94 @@ const CTA = () => {
             Be among the first to access our wealth creation strategies, investor network, and franchise opportunities when we launch.
           </p>
           
-          <div className="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
+          <div className="bg-dark-800 bg-opacity-80 rounded-xl p-8 backdrop-blur-sm border border-dark-700">
             <h3 className="text-2xl font-bold text-white mb-4">
               What to Expect When We Launch
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white bg-opacity-10 rounded-lg p-4">
-                <h4 className="text-xl font-semibold text-white mb-2">Community Access</h4>
+              <div className="bg-dark-700 bg-opacity-50 rounded-lg p-4 border border-dark-600">
+                <h4 className="text-xl font-semibold text-primary-300 mb-2">Community Access</h4>
                 <p className="text-gray-300">
                   Connect with like-minded Shia business owners and learn best practices from each other.
                 </p>
               </div>
-              <div className="bg-white bg-opacity-10 rounded-lg p-4">
-                <h4 className="text-xl font-semibold text-white mb-2">Premium Strategies</h4>
+              <div className="bg-dark-700 bg-opacity-50 rounded-lg p-4 border border-dark-600">
+                <h4 className="text-xl font-semibold text-primary-300 mb-2">Premium Strategies</h4>
                 <p className="text-gray-300">
                   Get full access to wealth creation strategies and opportunities for $49/month.
                 </p>
               </div>
-              <div className="bg-white bg-opacity-10 rounded-lg p-4">
-                <h4 className="text-xl font-semibold text-white mb-2">Franchise Opportunity</h4>
+              <div className="bg-dark-700 bg-opacity-50 rounded-lg p-4 border border-dark-600">
+                <h4 className="text-xl font-semibold text-primary-300 mb-2">Franchise Opportunity</h4>
                 <p className="text-gray-300">
                   Secure your spot to own an exclusive franchise with $200K-$500K annual earning potential.
                 </p>
               </div>
             </div>
             
-            <form className="max-w-lg mx-auto">
+            <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
               <div className="flex flex-col md:flex-row gap-4 mb-6">
                 <input 
                   type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your Name" 
-                  className="flex-1 px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-300 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="flex-1 px-4 py-3 rounded-lg bg-dark-900 text-white placeholder-gray-400 border border-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  required
                 />
                 <input 
                   type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Your Email" 
-                  className="flex-1 px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-300 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="flex-1 px-4 py-3 rounded-lg bg-dark-900 text-white placeholder-gray-400 border border-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  required
                 />
               </div>
               <div className="mb-6">
-                <select className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-primary-500">
-                  <option value="" className="bg-secondary-800">I'm interested in...</option>
-                  <option value="community" className="bg-secondary-800">Free Community</option>
-                  <option value="premium" className="bg-secondary-800">Premium Strategies ($49/month)</option>
-                  <option value="investor" className="bg-secondary-800">Investor Network</option>
-                  <option value="franchise" className="bg-secondary-800">Franchise Opportunity ($100K)</option>
+                <select 
+                  name="interest"
+                  value={formData.interest}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg bg-dark-900 text-white border border-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  required
+                >
+                  <option value="" className="bg-dark-800">I'm interested in...</option>
+                  <option value="community" className="bg-dark-800">Free Community</option>
+                  <option value="premium" className="bg-dark-800">Premium Strategies ($49/month)</option>
+                  <option value="investor" className="bg-dark-800">Investor Network</option>
+                  <option value="franchise" className="bg-dark-800">Franchise Opportunity ($100K)</option>
                 </select>
               </div>
-              <button className="w-full bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center">
+              <button 
+                type="submit"
+                className="w-full bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center"
+              >
                 Join the Waitlist
                 <FaArrowRight className="ml-2" />
               </button>
             </form>
+            
+            <div className="mt-8 p-4 bg-dark-700 rounded-lg border border-dark-600">
+              <div className="flex items-center">
+                <FaMobile className="text-primary-400 text-xl mr-3" />
+                <div>
+                  <p className="text-white font-medium">Phone Number (SMS Enabled):</p>
+                  <a 
+                    href="#" 
+                    onClick={handleSMSClick}
+                    className="text-primary-300 text-lg font-bold hover:text-primary-400 transition-colors"
+                  >
+                    📱 (732) 763-8486
+                  </a>
+                </div>
+              </div>
+              <p className="text-gray-400 text-sm mt-2">
+                Click the number to send a pre-filled SMS message about your interest
+              </p>
+            </div>
             
             <p className="text-gray-400 mt-4 text-sm">
               By joining our waitlist, you'll be the first to know when we launch and receive exclusive early-access benefits.

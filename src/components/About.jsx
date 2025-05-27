@@ -26,11 +26,11 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-secondary-50">
+    <section id="about" className="py-20 bg-dark-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">About Blueprint313</h2>
-          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Blueprint313 is a platform dedicated to teaching modern wealth creation strategies to the Shia community. We believe in providing practical, ethical alternatives to traditional career paths.
           </p>
         </div>
@@ -41,45 +41,45 @@ const About = () => {
               <div className="flex justify-center">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-secondary-900">{feature.title}</h3>
-              <p className="text-secondary-600">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+              <p className="text-gray-300">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 bg-white rounded-xl shadow-md p-8">
+        <div className="mt-16 bg-dark-800 rounded-xl shadow-md p-8 border border-primary-800 border-opacity-30">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-              <h3 className="text-2xl font-bold mb-4 text-secondary-900">Our Mission</h3>
-              <p className="text-secondary-700 mb-4">
+              <h3 className="text-2xl font-bold mb-4 text-white">Our Mission</h3>
+              <p className="text-gray-300 mb-4">
                 At Blueprint313, we're committed to showing that success doesn't require following conventional paths. We believe that with focus, determination, and the right guidance, anyone can build significant wealth.
               </p>
-              <p className="text-secondary-700">
+              <p className="text-gray-300">
                 Our platform provides the knowledge, strategies, and community support needed to pursue alternative paths to financial success while staying true to Shia values and principles.
               </p>
             </div>
-            <div className="md:w-1/2 md:pl-8 border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0 md:pl-8">
-              <h3 className="text-2xl font-bold mb-4 text-secondary-900">Our Approach</h3>
+            <div className="md:w-1/2 md:pl-8 border-t md:border-t-0 md:border-l border-dark-600 pt-6 md:pt-0 md:pl-8">
+              <h3 className="text-2xl font-bold mb-4 text-white">Our Approach</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">✓</span>
-                  <span className="text-secondary-700">Focus on one thing until mastery</span>
+                  <span className="text-primary-400 mr-2">✓</span>
+                  <span className="text-gray-300">Focus on one thing until mastery</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">✓</span>
-                  <span className="text-secondary-700">Build systems that scale your business</span>
+                  <span className="text-primary-400 mr-2">✓</span>
+                  <span className="text-gray-300">Build systems that scale your business</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">✓</span>
-                  <span className="text-secondary-700">Learn practical skills with immediate application</span>
+                  <span className="text-primary-400 mr-2">✓</span>
+                  <span className="text-gray-300">Learn practical skills with immediate application</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">✓</span>
-                  <span className="text-secondary-700">Develop a growth mindset and entrepreneurial thinking</span>
+                  <span className="text-primary-400 mr-2">✓</span>
+                  <span className="text-gray-300">Develop a growth mindset and entrepreneurial thinking</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">✓</span>
-                  <span className="text-secondary-700">Create ethical businesses aligned with Shia values</span>
+                  <span className="text-primary-400 mr-2">✓</span>
+                  <span className="text-gray-300">Create ethical businesses aligned with Shia values</span>
                 </li>
               </ul>
             </div>

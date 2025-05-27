@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { FaRocket, FaLaptopCode, FaChartLine, FaGraduationCap, FaRegLightbulb, FaRegClock } from 'react-icons/fa';
 import Navbar from './components/Navbar';
@@ -15,6 +15,29 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 function App() {
+  useEffect(() => {
+    // Add scroll reveal animation
+    const handleScrollAnimation = () => {
+      const revealElements = document.querySelectorAll('.reveal');
+      
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = revealElements[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          revealElements[i].classList.add('active');
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScrollAnimation);
+    // Initial check
+    setTimeout(handleScrollAnimation, 300);
+    
+    return () => window.removeEventListener('scroll', handleScrollAnimation);
+  }, []);
+
   return (
     <div className="min-h-screen bg-dark-bg">
       <Navbar />
